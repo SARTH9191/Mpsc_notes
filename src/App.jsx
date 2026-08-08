@@ -101,8 +101,8 @@ export default function App() {
                 <Route path="settings" element={<AdminSettingsPage />} />
               </Route>
 
-              {/* Catch-all 404 */}
-              <Route path="*" element={<Navigate to="/404" replace />} />
+              {/* Catch-all unknown routes redirect directly to Homepage */}
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </BrowserRouter>
         </LanguageProvider>

@@ -42,78 +42,78 @@ export function Header() {
 
   return (
     <div className="sticky top-0 z-40 w-full shadow-2xl">
-      {/* Main Navbar Header */}
+      {/* Main Navbar Header with Laptop & Mobile Balanced Layout */}
       <header className="w-full bg-slate-950/95 backdrop-blur-md border-b border-slate-800 text-white shadow-xl transition-all">
-        <div className="w-full px-3 sm:px-8 lg:px-12 xl:px-16 h-16 sm:h-20 lg:h-24 flex items-center justify-between gap-2 sm:gap-4">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3 lg:gap-5">
           
-          {/* Logo & Brand - Extremely Compact & Clean on Mobile */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
-            <div className="w-9 sm:w-11 lg:w-12 h-9 sm:h-11 lg:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
-              <BookOpen className="w-5 sm:w-6 lg:w-7 h-5 sm:h-6 lg:h-7" />
+          {/* Logo & Brand */}
+          <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+              <BookOpen className="w-5.5 h-5.5 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <div className="flex items-center gap-1.5 sm:gap-2">
-                <span className="font-black text-base sm:text-xl lg:text-2xl tracking-tight text-white group-hover:text-blue-300 transition-colors">
+              <div className="flex items-center gap-2">
+                <span className="font-black text-lg sm:text-xl tracking-tight text-white group-hover:text-blue-300 transition-colors whitespace-nowrap">
                   ExamVault
                 </span>
-                <span className="hidden sm:inline-block text-[10px] sm:text-xs uppercase font-extrabold px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-300 border border-blue-400/40">
+                <span className="hidden sm:inline-block text-[10px] uppercase font-bold px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-400/30 whitespace-nowrap">
                   MH Demo
                 </span>
               </div>
-              <p className="text-xs text-slate-300 font-semibold tracking-wide hidden sm:block">
+              <p className="text-[11px] text-slate-300 font-medium tracking-wide hidden lg:block whitespace-nowrap">
                 {t("brandTagline")}
               </p>
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-2 lg:gap-4 xl:gap-6">
+          {/* Desktop & Laptop Navigation Links - Guaranteed Single-Line (whitespace-nowrap) */}
+          <nav className="hidden md:flex items-center gap-1.5 lg:gap-3 xl:gap-4 shrink-0">
             <Link
               to="/"
-              className={`px-3.5 lg:px-5 py-2.5 rounded-xl text-base lg:text-lg font-extrabold transition-all ${
+              className={`px-3 lg:px-4 py-2 rounded-xl text-sm lg:text-base font-extrabold whitespace-nowrap transition-all ${
                 isCurrent("/") && location.pathname === "/"
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30"
-                  : "text-slate-200 hover:text-white hover:bg-slate-800/90"
+                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
+                  : "text-slate-200 hover:text-white hover:bg-slate-800/80"
               }`}
             >
               {t("navHome")}
             </Link>
             <Link
               to="/exams"
-              className={`px-3.5 lg:px-5 py-2.5 rounded-xl text-base lg:text-lg font-extrabold transition-all ${
+              className={`px-3 lg:px-4 py-2 rounded-xl text-sm lg:text-base font-extrabold whitespace-nowrap transition-all ${
                 isCurrent("/exams")
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30"
-                  : "text-slate-200 hover:text-white hover:bg-slate-800/90"
+                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
+                  : "text-slate-200 hover:text-white hover:bg-slate-800/80"
               }`}
             >
               {t("navExams")}
             </Link>
             <Link
               to="/notes"
-              className={`px-3.5 lg:px-5 py-2.5 rounded-xl text-base lg:text-lg font-extrabold transition-all ${
+              className={`px-3 lg:px-4 py-2 rounded-xl text-sm lg:text-base font-extrabold whitespace-nowrap transition-all ${
                 isCurrent("/notes")
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30"
-                  : "text-slate-200 hover:text-white hover:bg-slate-800/90"
+                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
+                  : "text-slate-200 hover:text-white hover:bg-slate-800/80"
               }`}
             >
               {t("navNotes")}
             </Link>
             <Link
               to="/about"
-              className={`px-3.5 lg:px-5 py-2.5 rounded-xl text-base lg:text-lg font-extrabold transition-all ${
+              className={`px-3 lg:px-4 py-2 rounded-xl text-sm lg:text-base font-extrabold whitespace-nowrap transition-all ${
                 isCurrent("/about")
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30"
-                  : "text-slate-200 hover:text-white hover:bg-slate-800/90"
+                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
+                  : "text-slate-200 hover:text-white hover:bg-slate-800/80"
               }`}
             >
               {t("navAbout")}
             </Link>
             <Link
               to="/contact"
-              className={`px-3.5 lg:px-5 py-2.5 rounded-xl text-base lg:text-lg font-extrabold transition-all ${
+              className={`px-3 lg:px-4 py-2 rounded-xl text-sm lg:text-base font-extrabold whitespace-nowrap transition-all ${
                 isCurrent("/contact")
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30"
-                  : "text-slate-200 hover:text-white hover:bg-slate-800/90"
+                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
+                  : "text-slate-200 hover:text-white hover:bg-slate-800/80"
               }`}
             >
               {t("navContact")}
@@ -121,26 +121,26 @@ export function Header() {
           </nav>
 
           {/* Visual Divider Line */}
-          <div className="h-7 w-px bg-slate-800 hidden lg:block shrink-0" />
+          <div className="h-6 w-px bg-slate-800 hidden lg:block shrink-0" />
 
           {/* Header Right Actions */}
-          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             
             {/* Quick Search Trigger */}
             <button
               onClick={() => setSearchOpen(!searchOpen)}
-              className="p-2 sm:p-2.5 rounded-xl text-slate-200 hover:text-white hover:bg-slate-800 transition-colors flex items-center gap-2 text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900 min-w-[38px] sm:min-w-[44px] min-h-[38px] sm:min-h-[44px] justify-center"
+              className="p-2 sm:px-3 sm:py-2 rounded-xl text-slate-200 hover:text-white hover:bg-slate-800 transition-colors flex items-center gap-2 text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900 min-h-[40px] justify-center whitespace-nowrap"
               title="Search"
             >
               <Search className="w-4 h-4 text-blue-400" />
-              <span className="hidden xl:inline text-sm text-slate-300 font-bold">Search...</span>
+              <span className="hidden xl:inline text-xs sm:text-sm text-slate-300 font-bold">Search...</span>
             </button>
 
-            {/* Language Switcher EN | मराठी (Section 3 of PDF Spec: ExamVault EN | मराठी ☰) */}
-            <div className="flex items-center bg-slate-900 p-0.5 sm:p-1 rounded-xl border border-slate-700 text-xs sm:text-sm font-extrabold shadow-inner">
+            {/* Language Switcher EN | मराठी */}
+            <div className="flex items-center bg-slate-900 p-1 rounded-xl border border-slate-700 text-xs sm:text-sm font-bold shadow-inner shrink-0">
               <button
                 onClick={() => setLanguage("en")}
-                className={`px-2 sm:px-3 py-1 rounded-lg transition-all min-h-[32px] sm:min-h-[36px] ${
+                className={`px-2.5 sm:px-3 py-1 rounded-lg transition-all whitespace-nowrap ${
                   language === "en" ? "bg-blue-600 text-white shadow-sm font-black" : "text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -149,7 +149,7 @@ export function Header() {
               <span className="text-slate-600 px-0.5 font-bold">|</span>
               <button
                 onClick={() => setLanguage("mr")}
-                className={`px-2 sm:px-3 py-1 rounded-lg transition-all min-h-[32px] sm:min-h-[36px] ${
+                className={`px-2.5 sm:px-3 py-1 rounded-lg transition-all whitespace-nowrap ${
                   language === "mr" ? "bg-blue-600 text-white shadow-sm font-black" : "text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -157,11 +157,11 @@ export function Header() {
               </button>
             </div>
 
-            {/* Role Mode Switch (Desktop) */}
-            <div className="hidden xl:flex items-center bg-slate-900 p-1.5 rounded-xl border border-slate-700 text-sm">
+            {/* Role Mode Switch (Laptop/Desktop) */}
+            <div className="hidden xl:flex items-center bg-slate-900 p-1 rounded-xl border border-slate-700 text-xs sm:text-sm shrink-0">
               <button
                 onClick={() => switchRole("student")}
-                className={`px-3.5 py-1.5 rounded-lg font-black transition-all ${
+                className={`px-3 py-1 rounded-lg font-bold transition-all whitespace-nowrap ${
                   !isAdmin ? "bg-blue-600 text-white shadow-md" : "text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -169,37 +169,37 @@ export function Header() {
               </button>
               <button
                 onClick={() => switchRole("admin")}
-                className={`px-3.5 py-1.5 rounded-lg font-black flex items-center gap-1.5 transition-all ${
+                className={`px-3 py-1 rounded-lg font-bold flex items-center gap-1 transition-all whitespace-nowrap ${
                   isAdmin ? "bg-indigo-600 text-white shadow-md" : "text-slate-400 hover:text-slate-200"
                 }`}
               >
-                <ShieldCheck className="w-4 h-4" />
+                <ShieldCheck className="w-3.5 h-3.5" />
                 {t("adminPanel")}
               </button>
             </div>
 
-            {/* User Account / Auth (Desktop) */}
+            {/* User Account / Auth (Laptop/Desktop) */}
             {user ? (
               <Link
                 to={isAdmin ? "/admin" : "/dashboard"}
-                className="hidden sm:flex items-center gap-2.5 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-sm font-extrabold transition-colors min-h-[44px]"
+                className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs sm:text-sm font-bold transition-colors whitespace-nowrap"
               >
-                <div className="w-7 h-7 rounded-full bg-blue-600 text-white text-xs font-black flex items-center justify-center shadow">
+                <div className="w-6 sm:w-7 h-6 sm:h-7 rounded-full bg-blue-600 text-white text-xs font-black flex items-center justify-center shrink-0">
                   {user.avatar || "U"}
                 </div>
-                <span className="hidden md:inline max-w-[120px] truncate text-slate-100">{user.name}</span>
+                <span className="hidden lg:inline max-w-[110px] truncate text-slate-200">{user.name}</span>
               </Link>
             ) : (
-              <div className="hidden sm:flex items-center gap-2.5">
+              <div className="hidden sm:flex items-center gap-2">
                 <Link
                   to="/login"
-                  className="px-4 py-2.5 rounded-xl text-sm font-extrabold text-slate-200 hover:text-white transition-colors"
+                  className="px-3 py-2 rounded-xl text-xs sm:text-sm font-bold text-slate-300 hover:text-white transition-colors whitespace-nowrap"
                 >
                   {t("login")}
                 </Link>
                 <Link
                   to="/signup"
-                  className="px-5 py-2.5 rounded-xl text-sm font-extrabold bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/30 transition-all min-h-[44px]"
+                  className="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/30 transition-all whitespace-nowrap"
                 >
                   {t("signup")}
                 </Link>
@@ -209,7 +209,7 @@ export function Header() {
             {/* Mobile Hamburger Button ☰ */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-xl text-slate-300 hover:text-white bg-slate-900 border border-slate-700 transition-colors min-w-[38px] sm:min-w-[44px] min-h-[38px] sm:min-h-[44px] flex items-center justify-center shrink-0"
+              className="md:hidden p-2 rounded-xl text-slate-300 hover:text-white bg-slate-900 border border-slate-700 transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center shrink-0"
               aria-label="Toggle Menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
@@ -221,7 +221,7 @@ export function Header() {
         {/* Quick Search Drawer */}
         {searchOpen && (
           <div className="border-t border-slate-800 bg-slate-900/95 px-4 sm:px-6 py-3.5 animate-fade-in shadow-xl">
-            <form onSubmit={handleSearchSubmit} className="w-full max-w-4xl mx-auto flex items-center gap-2">
+            <form onSubmit={handleSearchSubmit} className="w-full max-w-3xl mx-auto flex items-center gap-2">
               <div className="relative flex-1">
                 <Search className="w-4.5 h-4.5 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
                 <input
