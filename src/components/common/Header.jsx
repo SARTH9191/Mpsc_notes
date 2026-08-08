@@ -41,21 +41,21 @@ export function Header() {
   };
 
   return (
-    <div className="sticky top-0 z-40 w-full shadow-2xl">
-      {/* Main Navbar Header with Non-Overlapping Layout */}
+    <div className="sticky top-0 z-40 w-full shadow-2xl overflow-x-hidden">
+      {/* Main Navbar Header with Perfect Screen Fit Guarantee */}
       <header className="w-full bg-slate-950/95 backdrop-blur-md border-b border-slate-800 text-white shadow-xl transition-all">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+        <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2 sm:gap-4">
           
-          {/* Left Group: Logo & Brand + Shifted Navigation Links (Strictly shrink-0) */}
-          <div className="flex items-center gap-4 xl:gap-6 shrink-0">
+          {/* Left Group: Logo & Brand + Navigation Links */}
+          <div className="flex items-center gap-3 lg:gap-5 shrink-0">
             {/* Logo & Brand */}
-            <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
-                <BookOpen className="w-5.5 h-5.5 sm:w-6 sm:h-6" />
+            <Link to="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+                <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-black text-lg sm:text-xl tracking-tight text-white group-hover:text-blue-300 transition-colors whitespace-nowrap" style={{ whiteSpace: 'nowrap' }}>
+                <div className="flex items-center gap-1.5">
+                  <span className="font-black text-base sm:text-xl tracking-tight text-white group-hover:text-blue-300 transition-colors whitespace-nowrap" style={{ whiteSpace: 'nowrap' }}>
                     ExamVault
                   </span>
                   <span className="hidden sm:inline-block text-[10px] uppercase font-bold px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-400/30 whitespace-nowrap" style={{ whiteSpace: 'nowrap' }}>
@@ -68,12 +68,12 @@ export function Header() {
               </div>
             </Link>
 
-            {/* Laptop & Desktop Navigation Links (Strictly non-overlapping lg:flex) */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2.5 shrink-0">
+            {/* Desktop & Laptop Navigation Links (Compact & Non-Overflowing xl:flex) */}
+            <nav className="hidden xl:flex items-center gap-1.5 lg:gap-2 shrink-0">
               <Link
                 to="/"
                 style={{ whiteSpace: 'nowrap' }}
-                className={`px-3 xl:px-4 py-2 rounded-xl text-sm xl:text-base font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
+                className={`px-3 py-2 rounded-xl text-sm font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
                   isCurrent("/") && location.pathname === "/"
                     ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
                     : "text-slate-200 hover:text-white hover:bg-slate-800/80"
@@ -84,7 +84,7 @@ export function Header() {
               <Link
                 to="/exams"
                 style={{ whiteSpace: 'nowrap' }}
-                className={`px-3 xl:px-4 py-2 rounded-xl text-sm xl:text-base font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
+                className={`px-3 py-2 rounded-xl text-sm font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
                   isCurrent("/exams")
                     ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
                     : "text-slate-200 hover:text-white hover:bg-slate-800/80"
@@ -95,7 +95,7 @@ export function Header() {
               <Link
                 to="/notes"
                 style={{ whiteSpace: 'nowrap' }}
-                className={`px-3 xl:px-4 py-2 rounded-xl text-sm xl:text-base font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
+                className={`px-3 py-2 rounded-xl text-sm font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
                   isCurrent("/notes")
                     ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
                     : "text-slate-200 hover:text-white hover:bg-slate-800/80"
@@ -106,7 +106,7 @@ export function Header() {
               <Link
                 to="/about"
                 style={{ whiteSpace: 'nowrap' }}
-                className={`px-3 xl:px-4 py-2 rounded-xl text-sm xl:text-base font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
+                className={`px-3 py-2 rounded-xl text-sm font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
                   isCurrent("/about")
                     ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
                     : "text-slate-200 hover:text-white hover:bg-slate-800/80"
@@ -117,7 +117,7 @@ export function Header() {
               <Link
                 to="/contact"
                 style={{ whiteSpace: 'nowrap' }}
-                className={`px-3 xl:px-4 py-2 rounded-xl text-sm xl:text-base font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
+                className={`px-3 py-2 rounded-xl text-sm font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
                   isCurrent("/contact")
                     ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
                     : "text-slate-200 hover:text-white hover:bg-slate-800/80"
@@ -128,25 +128,25 @@ export function Header() {
             </nav>
           </div>
 
-          {/* Right Group: Search, Language, Role Switcher, Account (Strictly shrink-0) */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          {/* Right Group: Search, Language, Role Switcher, Account */}
+          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
             
             {/* Quick Search Trigger */}
             <button
               onClick={() => setSearchOpen(!searchOpen)}
-              className="p-2 sm:px-3 sm:py-2 rounded-xl text-slate-200 hover:text-white hover:bg-slate-800 transition-colors flex items-center gap-2 text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900 min-h-[40px] justify-center shrink-0"
+              className="p-2 sm:px-2.5 sm:py-2 rounded-xl text-slate-200 hover:text-white hover:bg-slate-800 transition-colors flex items-center gap-1.5 text-xs sm:text-sm font-semibold border border-slate-700 bg-slate-900 min-h-[38px] sm:min-h-[40px] justify-center shrink-0"
               title="Search"
             >
               <Search className="w-4 h-4 text-blue-400" />
-              <span className="hidden xl:inline text-xs sm:text-sm text-slate-300 font-bold" style={{ whiteSpace: 'nowrap' }}>Search...</span>
+              <span className="hidden 2xl:inline text-xs sm:text-sm text-slate-300 font-bold" style={{ whiteSpace: 'nowrap' }}>Search...</span>
             </button>
 
             {/* Language Switcher EN | मराठी */}
-            <div className="flex items-center bg-slate-900 p-1 rounded-xl border border-slate-700 text-xs sm:text-sm font-bold shadow-inner shrink-0">
+            <div className="flex items-center bg-slate-900 p-0.5 sm:p-1 rounded-xl border border-slate-700 text-xs font-bold shadow-inner shrink-0">
               <button
                 onClick={() => setLanguage("en")}
                 style={{ whiteSpace: 'nowrap' }}
-                className={`px-2.5 sm:px-3 py-1 rounded-lg transition-all shrink-0 ${
+                className={`px-2 sm:px-2.5 py-1 rounded-lg transition-all shrink-0 ${
                   language === "en" ? "bg-blue-600 text-white shadow-sm font-black" : "text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -156,7 +156,7 @@ export function Header() {
               <button
                 onClick={() => setLanguage("mr")}
                 style={{ whiteSpace: 'nowrap' }}
-                className={`px-2.5 sm:px-3 py-1 rounded-lg transition-all shrink-0 ${
+                className={`px-2 sm:px-2.5 py-1 rounded-lg transition-all shrink-0 ${
                   language === "mr" ? "bg-blue-600 text-white shadow-sm font-black" : "text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -164,12 +164,12 @@ export function Header() {
               </button>
             </div>
 
-            {/* Role Mode Switch (Desktop 1280px+) */}
-            <div className="hidden 2xl:flex items-center bg-slate-900 p-1 rounded-xl border border-slate-700 text-xs sm:text-sm shrink-0">
+            {/* Role Mode Switch (2XL Displays 1536px+) */}
+            <div className="hidden 2xl:flex items-center bg-slate-900 p-1 rounded-xl border border-slate-700 text-xs shrink-0">
               <button
                 onClick={() => switchRole("student")}
                 style={{ whiteSpace: 'nowrap' }}
-                className={`px-3 py-1 rounded-lg font-bold transition-all shrink-0 ${
+                className={`px-2.5 py-1 rounded-lg font-bold transition-all shrink-0 ${
                   !isAdmin ? "bg-blue-600 text-white shadow-md" : "text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -178,7 +178,7 @@ export function Header() {
               <button
                 onClick={() => switchRole("admin")}
                 style={{ whiteSpace: 'nowrap' }}
-                className={`px-3 py-1 rounded-lg font-bold flex items-center gap-1 transition-all shrink-0 ${
+                className={`px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 transition-all shrink-0 ${
                   isAdmin ? "bg-indigo-600 text-white shadow-md" : "text-slate-400 hover:text-slate-200"
                 }`}
               >
@@ -192,39 +192,39 @@ export function Header() {
               <Link
                 to={isAdmin ? "/admin" : "/dashboard"}
                 style={{ whiteSpace: 'nowrap' }}
-                className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs sm:text-sm font-bold transition-colors shrink-0"
+                className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-bold transition-colors shrink-0"
               >
-                <div className="w-6 sm:w-7 h-6 sm:h-7 rounded-full bg-blue-600 text-white text-xs font-black flex items-center justify-center shrink-0">
+                <div className="w-6 h-6 rounded-full bg-blue-600 text-white text-[11px] font-black flex items-center justify-center shrink-0">
                   {user.avatar || "U"}
                 </div>
-                <span className="hidden 2xl:inline max-w-[110px] truncate text-slate-200">{user.name}</span>
+                <span className="hidden 2xl:inline max-w-[100px] truncate text-slate-200">{user.name}</span>
               </Link>
             ) : (
-              <div className="hidden sm:flex items-center gap-2 shrink-0">
+              <div className="hidden sm:flex items-center gap-1.5 shrink-0">
                 <Link
                   to="/login"
                   style={{ whiteSpace: 'nowrap' }}
-                  className="px-3 py-2 rounded-xl text-xs sm:text-sm font-bold text-slate-300 hover:text-white transition-colors shrink-0"
+                  className="px-2.5 py-1.5 rounded-xl text-xs font-bold text-slate-300 hover:text-white transition-colors shrink-0"
                 >
                   {t("login")}
                 </Link>
                 <Link
                   to="/signup"
                   style={{ whiteSpace: 'nowrap' }}
-                  className="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/30 transition-all shrink-0"
+                  className="px-3 py-1.5 rounded-xl text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/30 transition-all shrink-0"
                 >
                   {t("signup")}
                 </Link>
               </div>
             )}
 
-            {/* Mobile / Tablet Hamburger Button ☰ */}
+            {/* Mobile / Laptop Hamburger Button ☰ */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white bg-slate-900 border border-slate-700 transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center shrink-0"
+              className="xl:hidden p-2 rounded-xl text-slate-300 hover:text-white bg-slate-900 border border-slate-700 transition-colors min-w-[38px] min-h-[38px] flex items-center justify-center shrink-0"
               aria-label="Toggle Menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
 
           </div>
@@ -261,7 +261,7 @@ export function Header() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden bg-slate-950/95 backdrop-blur-md flex flex-col justify-between p-6 animate-fade-in">
+        <div className="fixed inset-0 z-50 xl:hidden bg-slate-950/95 backdrop-blur-md flex flex-col justify-between p-6 animate-fade-in">
           <div>
             <div className="flex items-center justify-between pb-6 border-b border-slate-800">
               <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2.5">
