@@ -169,25 +169,25 @@ export function Hero() {
 
               </div>
 
-              {/* Floating Stat Card (Top Right - DECREASED SIZE) */}
-              <div className="absolute -top-4 -right-4 bg-slate-950/90 border border-slate-700 p-3 rounded-2xl shadow-xl backdrop-blur-md flex items-center gap-2.5 animate-float-bob z-20">
-                <div className="w-8.5 h-8.5 rounded-xl bg-amber-500/30 text-amber-300 flex items-center justify-center font-bold shrink-0">
-                  <FileCheck2 className="w-4.5 h-4.5" />
+              {/* Compact Floating Stat Card (Top Right) */}
+              <div className="absolute -top-3 -right-3 bg-slate-950/95 border border-slate-700 p-2.5 sm:p-3 rounded-2xl shadow-xl backdrop-blur-md flex items-center gap-2 animate-float-bob z-20">
+                <div className="w-7 h-7 rounded-lg bg-amber-500/30 text-amber-300 flex items-center justify-center font-bold shrink-0">
+                  <FileCheck2 className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <div className="text-xs font-extrabold text-white">५००+ नोट्स उपलब्ध</div>
-                  <div className="text-[10px] text-slate-300 font-medium">शोधा व डाउनलोड करा</div>
+                  <div className="text-[11px] font-extrabold text-white leading-tight">५००+ नोट्स उपलब्ध</div>
+                  <div className="text-[9px] text-slate-300 font-medium leading-tight">शोधा व डाउनलोड करा</div>
                 </div>
               </div>
 
-              {/* Floating Stat Card (Bottom Left - DECREASED SIZE) */}
-              <div className="absolute -bottom-5 -left-4 bg-slate-950/90 border border-slate-700 p-3 rounded-2xl shadow-xl backdrop-blur-md flex items-center gap-2.5 animate-float-bob [animation-delay:1.5s] z-20">
-                <div className="w-8.5 h-8.5 rounded-xl bg-blue-500/30 text-blue-300 flex items-center justify-center font-bold shrink-0">
-                  <Layers className="w-4.5 h-4.5" />
+              {/* Compact Floating Stat Card (Bottom Left) */}
+              <div className="absolute -bottom-4 -left-3 bg-slate-950/95 border border-slate-700 p-2.5 sm:p-3 rounded-2xl shadow-xl backdrop-blur-md flex items-center gap-2 animate-float-bob [animation-delay:1.5s] z-20">
+                <div className="w-7 h-7 rounded-lg bg-blue-500/30 text-blue-300 flex items-center justify-center font-bold shrink-0">
+                  <Layers className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <div className="text-xs font-extrabold text-white">MPSC, पोलीस, तलाठी</div>
-                  <div className="text-[10px] text-slate-300 font-medium">विशेष अभ्यास सामग्री</div>
+                  <div className="text-[11px] font-extrabold text-white leading-tight">MPSC, पोलीस, तलाठी</div>
+                  <div className="text-[9px] text-slate-300 font-medium leading-tight">विशेष अभ्यास सामग्री</div>
                 </div>
               </div>
 
