@@ -42,93 +42,93 @@ export function Header() {
 
   return (
     <div className="sticky top-0 z-40 w-full shadow-2xl">
-      {/* Main Navbar Header with Laptop & Desktop Centered Layout */}
+      {/* Main Navbar Header with Left-Shifted Navigation Links */}
       <header className="w-full bg-slate-950/95 backdrop-blur-md border-b border-slate-800 text-white shadow-xl transition-all">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3 lg:gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
           
-          {/* Logo & Brand */}
-          <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
-              <BookOpen className="w-5.5 h-5.5 sm:w-6 sm:h-6" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-black text-lg sm:text-xl tracking-tight text-white group-hover:text-blue-300 transition-colors whitespace-nowrap" style={{ whiteSpace: 'nowrap' }}>
-                  ExamVault
-                </span>
-                <span className="hidden sm:inline-block text-[10px] uppercase font-bold px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-400/30 whitespace-nowrap" style={{ whiteSpace: 'nowrap' }}>
-                  MH Demo
-                </span>
+          {/* Left Group: Logo & Brand + Shifted Navigation Links */}
+          <div className="flex items-center gap-6 lg:gap-8 min-w-0">
+            {/* Logo & Brand */}
+            <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+                <BookOpen className="w-5.5 h-5.5 sm:w-6 sm:h-6" />
               </div>
-              <p className="text-[11px] text-slate-300 font-medium tracking-wide hidden xl:block whitespace-nowrap" style={{ whiteSpace: 'nowrap' }}>
-                {t("brandTagline")}
-              </p>
-            </div>
-          </Link>
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="font-black text-lg sm:text-xl tracking-tight text-white group-hover:text-blue-300 transition-colors whitespace-nowrap" style={{ whiteSpace: 'nowrap' }}>
+                    ExamVault
+                  </span>
+                  <span className="hidden sm:inline-block text-[10px] uppercase font-bold px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-400/30 whitespace-nowrap" style={{ whiteSpace: 'nowrap' }}>
+                    MH Demo
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-300 font-medium tracking-wide hidden xl:block whitespace-nowrap" style={{ whiteSpace: 'nowrap' }}>
+                  {t("brandTagline")}
+                </p>
+              </div>
+            </Link>
 
-          {/* Desktop & Laptop Navigation Links - Single Horizontal Line */}
-          <nav className="hidden md:flex items-center gap-1.5 lg:gap-2.5 xl:gap-4 shrink-0">
-            <Link
-              to="/"
-              style={{ whiteSpace: 'nowrap' }}
-              className={`px-3 lg:px-4 py-2 rounded-xl text-sm lg:text-base font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
-                isCurrent("/") && location.pathname === "/"
-                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
-                  : "text-slate-200 hover:text-white hover:bg-slate-800/80"
-              }`}
-            >
-              {t("navHome")}
-            </Link>
-            <Link
-              to="/exams"
-              style={{ whiteSpace: 'nowrap' }}
-              className={`px-3 lg:px-4 py-2 rounded-xl text-sm lg:text-base font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
-                isCurrent("/exams")
-                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
-                  : "text-slate-200 hover:text-white hover:bg-slate-800/80"
-              }`}
-            >
-              {t("navExams")}
-            </Link>
-            <Link
-              to="/notes"
-              style={{ whiteSpace: 'nowrap' }}
-              className={`px-3 lg:px-4 py-2 rounded-xl text-sm lg:text-base font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
-                isCurrent("/notes")
-                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
-                  : "text-slate-200 hover:text-white hover:bg-slate-800/80"
-              }`}
-            >
-              {t("navNotes")}
-            </Link>
-            <Link
-              to="/about"
-              style={{ whiteSpace: 'nowrap' }}
-              className={`px-3 lg:px-4 py-2 rounded-xl text-sm lg:text-base font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
-                isCurrent("/about")
-                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
-                  : "text-slate-200 hover:text-white hover:bg-slate-800/80"
-              }`}
-            >
-              {t("navAbout")}
-            </Link>
-            <Link
-              to="/contact"
-              style={{ whiteSpace: 'nowrap' }}
-              className={`px-3 lg:px-4 py-2 rounded-xl text-sm lg:text-base font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
-                isCurrent("/contact")
-                  ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
-                  : "text-slate-200 hover:text-white hover:bg-slate-800/80"
-              }`}
-            >
-              {t("navContact")}
-            </Link>
-          </nav>
+            {/* Desktop & Laptop Navigation Links Shifted Towards Left */}
+            <nav className="hidden md:flex items-center gap-1.5 lg:gap-2.5 xl:gap-3 shrink-0">
+              <Link
+                to="/"
+                style={{ whiteSpace: 'nowrap' }}
+                className={`px-3 lg:px-4 py-2 rounded-xl text-sm lg:text-base font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
+                  isCurrent("/") && location.pathname === "/"
+                    ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
+                    : "text-slate-200 hover:text-white hover:bg-slate-800/80"
+                }`}
+              >
+                {t("navHome")}
+              </Link>
+              <Link
+                to="/exams"
+                style={{ whiteSpace: 'nowrap' }}
+                className={`px-3 lg:px-4 py-2 rounded-xl text-sm lg:text-base font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
+                  isCurrent("/exams")
+                    ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
+                    : "text-slate-200 hover:text-white hover:bg-slate-800/80"
+                }`}
+              >
+                {t("navExams")}
+              </Link>
+              <Link
+                to="/notes"
+                style={{ whiteSpace: 'nowrap' }}
+                className={`px-3 lg:px-4 py-2 rounded-xl text-sm lg:text-base font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
+                  isCurrent("/notes")
+                    ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
+                    : "text-slate-200 hover:text-white hover:bg-slate-800/80"
+                }`}
+              >
+                {t("navNotes")}
+              </Link>
+              <Link
+                to="/about"
+                style={{ whiteSpace: 'nowrap' }}
+                className={`px-3 lg:px-4 py-2 rounded-xl text-sm lg:text-base font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
+                  isCurrent("/about")
+                    ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
+                    : "text-slate-200 hover:text-white hover:bg-slate-800/80"
+                }`}
+              >
+                {t("navAbout")}
+              </Link>
+              <Link
+                to="/contact"
+                style={{ whiteSpace: 'nowrap' }}
+                className={`px-3 lg:px-4 py-2 rounded-xl text-sm lg:text-base font-extrabold shrink-0 inline-flex items-center justify-center transition-all ${
+                  isCurrent("/contact")
+                    ? "bg-blue-600 text-white shadow-md shadow-blue-600/30"
+                    : "text-slate-200 hover:text-white hover:bg-slate-800/80"
+                }`}
+              >
+                {t("navContact")}
+              </Link>
+            </nav>
+          </div>
 
-          {/* Visual Divider Line */}
-          <div className="h-6 w-px bg-slate-800 hidden lg:block shrink-0" />
-
-          {/* Header Right Actions */}
+          {/* Right Group: Search, Language, Role Switcher, Account */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             
             {/* Quick Search Trigger */}
