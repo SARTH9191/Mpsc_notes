@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import { DataProvider } from "./context/DataContext";
 import { LanguageProvider } from "./context/LanguageContext";
@@ -61,24 +61,6 @@ function ScrollToTop() {
   return null;
 }
 
-// FirstVisitRedirect Component ensures that when a user opens the web app URL for the first time in a session, it always opens the Homepage (/)
-function FirstVisitRedirect() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  useEffect(() => {
-    const hasVisited = sessionStorage.getItem("examvault_session_started");
-    if (!hasVisited) {
-      sessionStorage.setItem("examvault_session_started", "true");
-      if (location.pathname !== "/") {
-        navigate("/", { replace: true });
-      }
-    }
-  }, [location, navigate]);
-
-  return null;
-}
-
 export default function App() {
   return (
     <AuthProvider>
@@ -86,7 +68,6 @@ export default function App() {
         <LanguageProvider>
           <BrowserRouter>
             <ScrollToTop />
-            <FirstVisitRedirect />
             <Routes>
               {/* Student Facing Public Routes - Index is HomePage */}
               <Route path="/" element={<RootLayout />}>
