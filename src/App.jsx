@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import { DataProvider } from "./context/DataContext";
 import { LanguageProvider } from "./context/LanguageContext";
@@ -50,14 +50,26 @@ import { AdminAdManagementPage } from "./pages/admin/AdminAdManagementPage";
 import { AdminAnalyticsPage } from "./pages/admin/AdminAnalyticsPage";
 import { AdminSettingsPage } from "./pages/admin/AdminSettingsPage";
 
+// ScrollToTop Helper Component to ensure top scroll on route changes
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 export default function App() {
   return (
     <AuthProvider>
       <DataProvider>
         <LanguageProvider>
           <BrowserRouter>
+            <ScrollToTop />
             <Routes>
-              {/* Student Facing Public Routes */}
+              {/* Student Facing Public Routes - Index is HomePage */}
               <Route path="/" element={<RootLayout />}>
                 <Route index element={<HomePage />} />
                 <Route path="exams" element={<ExamsPage />} />
